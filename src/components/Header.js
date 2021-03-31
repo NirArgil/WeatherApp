@@ -1,0 +1,74 @@
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Icon, Menu } from "semantic-ui-react";
+import { toggleDarkMode, toggleTempValue } from "../actions/themeActions";
+import URLS from "../routes";
+import '../App.css';
+
+const Header = () => {
+  const { pathname } = useLocation();
+
+  const dispatch = useDispatch();
+
+  const [isHome, setIsHome] = useState(true);
+
+  const { darkMode, isFar } = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    if (pathname.includes("favorites")) {
+      setIsHome(false);
+    } else {
+      setIsHome(true);
+    }
+  }, [pathname]);
+
+  const toggleDarkLight = () => {
+    dispatch(toggleDarkMode());
+  };
+
+  const toggleCelFar = () => {
+    dispatch(toggleTempValue());
+  };
+
+  return (
+    // <div className="Header">
+      <Menu size="massive" borderless inverted={darkMode}>
+            <Menu.Item onClick={toggleDarkLight} title="Dark/Light Mode">
+              <Icon name={darkMode ? `sun` : `moon`} />
+            </Menu.Item>
+            <Menu.Item onClick={toggleCelFar} title="°C/°F">
+              °{isFar ? `F` : `C`}
+            </Menu.Item>
+            <Menu.Item
+              as={Link}
+              to={URLS.home}
+              active={isHome}
+              position="right"
+              title="Home"
+            >
+              <Icon name="home" />
+            </Menu.Item>
+            <Menu.Item
+              as={Link}
+              to={URLS.favorites}
+              active={!isHome}
+              title="Favorites"
+            >
+              <Icon name="favorite" />
+            </Menu.Item>
+            <Menu.Item
+              as="a"
+              // href="https://github.com/koftov"
+              target="_blank"
+              title="My Github"
+            >
+              <Icon name="github" />
+            </Menu.Item>
+          </Menu>
+    // </div>
+    
+  );
+};
+
+export default Header;
