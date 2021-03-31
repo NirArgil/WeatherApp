@@ -56,17 +56,6 @@ border: none !important;
   cursor: pointer;
 }
 
-.inverse {
-  /* background: #1b1c1d !important;
-  color: rgba(71, 43, 43, 0.9) !important; */
-}
-
-.inverse-search input,
-.inverse-search div div {
-  /* background: #3a3b3c !important;
-  color: rgba(255, 255, 255, 0.9) !important; */
-}
-
 .ui {
   transition: background-color 0.25s;
 }
