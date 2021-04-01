@@ -1,6 +1,5 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-// import { apikey, baseUrl } from "../config/config";
 
 export const apikey = process.env.REACT_APP_W_API_KEY;
 export const baseUrl = "https://dataservice.accuweather.com/";
