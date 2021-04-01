@@ -32,7 +32,6 @@ const Header = () => {
   };
 
   return (
-    // <div className="Header">
       <Menu size="massive" borderless inverted={darkMode}>
             <Menu.Item onClick={toggleDarkLight} title="Dark/Light Mode">
               <Icon name={darkMode ? `sun` : `moon`} />
@@ -59,14 +58,14 @@ const Header = () => {
             </Menu.Item>
             <Menu.Item
               as="a"
-              // href="https://github.com/koftov"
+              href="https://github.com/NirArgil/WeatherApp"
               target="_blank"
-              title="My Github"
+              rel="noopener noreferrer"
+              title="Github"
             >
               <Icon name="github" />
             </Menu.Item>
           </Menu>
-    // </div>
     
   );
 };
