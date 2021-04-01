@@ -1,9 +1,7 @@
 body {
   background: url(./img/h.jpg) !important; 
   background-size: cover !important;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  height: 300px !important;
+  min-height: 135vh;
 }
 
 .App {
@@ -13,7 +11,7 @@ body {
 .app-inverse {
   background: url(./img/n.jpg);
   background-size: cover;
-  min-height: 100vh;
+  min-height: 135vh;
 }
 
 .ui.menu {
@@ -94,4 +92,9 @@ span,
     font-size: 27px;
   }
 
+  body {
+    background: url(./img/h.jpg) !important; 
+    background-size: cover !important;
+  }
+ 
 }
