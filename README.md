@@ -1,3 +1,8 @@
+React Weather App
+Hooks
+State management with Redux
+Responsive web design.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
